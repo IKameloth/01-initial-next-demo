@@ -1,19 +1,26 @@
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import { DarkLayout } from "../components/layouts/DarkLayout";
 import { MainLayout } from "../components/layouts/MainLayout";
 
-export default function Home() {
+export default function AboutPage() {
   return (
-    <MainLayout>
+    <>
       <h1>About Page</h1>
-      <h1 className={styles.title}>
+      <h1 className={"title"}>
         Go to <Link href="/contact">Contact</Link>
       </h1>
 
-      <p className={styles.description}>
-        Get started by editing{" "}
-        <code className={styles.code}>pages/about.js</code>
+      <p className={"description"}>
+        Get started by editing <code className={"code"}>pages/about.js</code>
       </p>
-    </MainLayout>
+    </>
   );
 }
+
+AboutPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout>
+      <DarkLayout>{page}</DarkLayout>
+    </MainLayout>
+  );
+};
