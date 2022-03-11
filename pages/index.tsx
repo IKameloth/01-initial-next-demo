@@ -1,7 +1,7 @@
 import { MainLayout } from "../components/layouts/MainLayout";
 import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <MainLayout>
       <h1>Home Page</h1>
